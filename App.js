@@ -5,8 +5,12 @@ import React from 'react';
 
 //		rendering two elements must be done using a wrapper.
 class App extends React.Component {
+	constructor(){
+		super();
+		this.state = { txt: 'this is the state txt'}
+	}
 	render(){
-		return <h1>Hello World</h1>
+		return <h1>{this.state.txt}</h1>
 	}
 }
 

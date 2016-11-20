@@ -6,13 +6,13 @@ import ReactDOM from 'react-dom';
 //		rendering two elements must be done using a wrapper.
 class App extends React.Component {
 	render(){
-		
-		return <h1>{this.props.txt}</h1>
+		let txt = this.props.txt
+		return <h1>{txt}</h1>
 	}
 }
 
 ReactDOM.render(
-	<App txt="this is the props text" />,
+	<App txt="this is the props value" />,
 	document.getElementById('app')
 );
 

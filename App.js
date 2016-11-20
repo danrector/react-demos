@@ -19,8 +19,14 @@ App.propTypes = {
 	cat: React.PropTypes.number.isRequired
 }
 
+//		can define the default value of a prop
+
+App.defaultProps ={
+	txt: 'this is the default txt'
+}
+
 ReactDOM.render(
-	<App cat={5} txt="this is the props value" />,
+	<App cat={5} />,
 	document.getElementById('app')
 );
 

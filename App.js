@@ -11,6 +11,14 @@ class App extends React.Component {
 	}
 }
 
+//		can create props with expected types
+//		can also require a prop to be specified in app
+
+App.propTypes = {
+	txt: React.PropTypes.string,
+	cat: React.PropTypes.number.isRequired
+}
+
 ReactDOM.render(
 	<App txt="this is the props value" />,
 	document.getElementById('app')

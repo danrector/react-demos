@@ -20,7 +20,7 @@ App.propTypes = {
 }
 
 ReactDOM.render(
-	<App txt="this is the props value" />,
+	<App cat={5} txt="this is the props value" />,
 	document.getElementById('app')
 );
 

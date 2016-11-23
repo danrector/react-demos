@@ -1,5 +1,5 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 
 //		class component can have state
 
@@ -7,20 +7,32 @@ import React from 'react';
 class App extends React.Component {
 	constructor(){
 		super();
-		this.state = { txt: ''}
+		this.state = {
+			red: 0,
+			green: 0,
+			blue: 0
+		}
 		this.update = this.update.bind(this)
 	}
 	update(e){
-		this.setState({txt: e.target.value})
+		this.setState({
+			red: ReactDOM.findDOMNode(this.refs.red).value,
+			green: ReactDOM.findDOMNode(this.refs.green).value,
+			blue: ReactDOM.findDOMNode(this.refs.blue).value
+		})
 	}
 	render(){
 		return (
 			<div>
-				{this.state.txt}
-				<hr />
-				<Slider update={this.update} />
-				<Slider update={this.update} />
-				<Slider update={this.update} />
+				<Slider ref="red" update={this.update} />
+				{this.state.red}
+				<br />
+				<Slider ref="green" update={this.update} />
+				{this.state.green}
+				<br />
+				<Slider ref="blue" update={this.update} />
+				{this.state.blue}
+				<br />
 			</div>
 		);
 	}

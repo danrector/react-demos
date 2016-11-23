@@ -25,15 +25,15 @@ class App extends React.Component {
 	}
 }
 
-const Widget = (props) => {
-	return (
-		<div>
-		<input type="text" 
-			onChange={props.update} />
-		<h1>{props.txt}</h1>
-		</div>
-		);
+class Slider extends React.Component {
+	render(){
+		<input type="range"
+		min="0"
+		max="255" 
+			onChange={this.props.update} />
+	}
 }
+
 
 export default App
 

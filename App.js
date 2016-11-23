@@ -15,22 +15,25 @@ class App extends React.Component {
 	}
 	render(){
 		return (
-		<div>
-		<Widget txt={this.state.txt} update={this.update} />
-		<Widget txt={this.state.txt} update={this.update} />
-		<Widget txt={this.state.txt} update={this.update} />
-		<Widget txt={this.state.txt} update={this.update} />
-		</div>
+			<div>
+				{this.state.txt}
+				<hr />
+				<Slider update={this.update} />
+				<Slider update={this.update} />
+				<Slider update={this.update} />
+			</div>
 		);
 	}
 }
 
 class Slider extends React.Component {
 	render(){
-		<input type="range"
-		min="0"
-		max="255" 
-			onChange={this.props.update} />
+		return(
+			<input type="range"
+				min="0"
+				max="255" 
+				onChange={this.props.update} />
+		);
 	}
 }
 

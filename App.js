@@ -17,6 +17,9 @@ class App extends React.Component {
 		console.log('rendering!')
 		return <button onClick={this.update}>{this.state.val}</button>
 	}
+	componentDidMount(){
+		console.log('mounted')
+	}
 }
 
 export default App

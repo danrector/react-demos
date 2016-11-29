@@ -21,7 +21,8 @@ class App extends React.Component {
 		</button>
 	}
 	componentDidMount(){
-		console.log('mounted')
+		console.log('mounted');
+		console.log(ReactDOM.findDOMNode(this))
 	}
 	componentWillUnmount(){
 		console.log('bye!')

@@ -10,6 +10,9 @@ class App extends React.Component {
 	update(){
 		this.setState({val: this.state.val + 1})
 	}
+	componentWillMount(){
+		console.log('mounting')
+	}
 	render(){
 		console.log('rendering!')
 		return <button onClick={this.update}>{this.state.val}</button>

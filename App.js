@@ -20,9 +20,33 @@ class App extends React.Component {
 	componentDidMount(){
 		console.log('mounted')
 	}
+	componentWillUnmount(){
+		console.log('bye!')
+	}
 }
 
-export default App
+class Wrapper extends React.Component {
+	constructor(){
+		super();
+	}
+	mount(){
+		ReactDOM.render(<App />, document.getElementById('a'))
+	}
+	unmount(){
+		ReactDOM.unmountComponentAtNode(document.getElementById('a'))
+	}
+	render(){
+		return (
+			<div>
+				<button onClick={this.mount.bind(this)}>Mount</button>
+				<button onClick={this.unmount.bind(this)}>Unmount</button>
+				<div id="a"></div>
+			</div>
+		)
+	}
+}
+
+export default Wrapper
 
 // class Button extends React.Component {
 // 	render(){

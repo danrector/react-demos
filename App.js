@@ -23,9 +23,11 @@ class App extends React.Component {
 	componentDidMount(){
 		console.log('mounted');
 		console.log(ReactDOM.findDOMNode(this))
+		this.inc = setInterval(this.update,500)
 	}
 	componentWillUnmount(){
 		console.log('bye!')
+		clearInterval(this.inc)
 	}
 }
 

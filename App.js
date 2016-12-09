@@ -14,6 +14,9 @@ class App extends React.Component {
 	componentWillReceiveProps(nextProps){
 		this.setState({increasing: nextProps.val > this.props.val})
 	}
+	shouldComponentUpdate(nextProps, nextState) {
+		return nextProps.val % 5 === 0;
+	}
 	render(){
 		console.log(this.state.increasing)
 		return (

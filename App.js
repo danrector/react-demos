@@ -25,6 +25,9 @@ class App extends React.Component {
 			</button>
 		)
 	}
+	componentDidUpdate(prevProps, prevState) {
+		console.log(`prevProps: ${prevProps.val}`)
+	}
 }
 
 App.defaultProps = {val: 0}

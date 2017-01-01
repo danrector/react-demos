@@ -15,7 +15,7 @@ class App extends React.Component {
 		return(
 			<div>
 				{items.map(item => 
-					<Person person={item} />)}
+					<Person key={item.name} person={item} />)}
 			</div>
 		)
 	}

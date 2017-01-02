@@ -16,6 +16,7 @@ const HOC = (InnerComponent) => class extends React.Component {
 			<InnerComponent
 				{...this.props}
 				{...this.state}
+				update={this.update.bind(this)}
 			/>
 		)
 	}
@@ -34,7 +35,7 @@ class App extends React.Component {
 }
 
 const Button = HOC((props) => 
-	<button>{props.children} - {props.count}</button>
+	<button onClick={props.update}>{props.children} - {props.count}</button>
 )
 
 class Label extends React.Component {

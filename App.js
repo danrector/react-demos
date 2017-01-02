@@ -44,7 +44,9 @@ class Label extends React.Component {
 	}
 	render(){
 		return (
-			<label>{this.props.children} - {this.props.count}</label>
+			<label onMouseMove={this.props.update}>
+			{this.props.children} - {this.props.count}
+			</label>
 		)
 	}
 }

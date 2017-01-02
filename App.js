@@ -1,18 +1,26 @@
 import React from 'react';
 
+const HOC = (InnerComponent) => class extends React.Component {
+	render(){
+		return (
+			<InnerComponent />
+		)
+	}
+}
+
 class App extends React.Component {
 	render(){
 		return (
 			<div>
 				<Button>button</Button>
 				<hr/>
-				<Label>label</Label>
+				<LabelHOC>label</LabelHOC>
 			</div>
 		)
 	}
 }
 
-const Button = (props) => <button>{props.children}</button>
+const Button = HOC((props) => <button>{props.children}</button>)
 
 class Label extends React.Component {
 	render(){
@@ -21,6 +29,8 @@ class Label extends React.Component {
 		)
 	}
 }
+
+const LabelHOC = HOC(Label)
 
 export default App
 

@@ -3,7 +3,9 @@ import React from 'react';
 const HOC = (InnerComponent) => class extends React.Component {
 	render(){
 		return (
-			<InnerComponent />
+			<InnerComponent
+				{...this.props}
+			/>
 		)
 	}
 }

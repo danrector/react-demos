@@ -1,6 +1,9 @@
 import React from 'react';
 
 const HOC = (InnerComponent) => class extends React.Component {
+	componentWillMount(){
+		console.log('will mount')
+	}
 	render(){
 		return (
 			<InnerComponent
@@ -25,6 +28,9 @@ class App extends React.Component {
 const Button = HOC((props) => <button>{props.children}</button>)
 
 class Label extends React.Component {
+	componentWillMount(){
+		console.log('label will mount')
+	}
 	render(){
 		return (
 			<label>{this.props.children}</label>

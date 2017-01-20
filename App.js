@@ -1,6 +1,14 @@
 import React from 'react';
 
 class App extends React.Component {
+	constructor(){
+		super();
+		this.state = {
+			input: '/* add your jsx here */',
+			output: '',
+			err: ''
+		}
+	}
 	render(){
 		return(
 			<div>

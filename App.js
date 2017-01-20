@@ -20,7 +20,7 @@ class App extends React.Component {
 			})
 		}
 		catch(err){
-
+			this.setState({err: err.message})
 		}
 	}
 	render(){

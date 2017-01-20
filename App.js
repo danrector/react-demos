@@ -9,6 +9,20 @@ class App extends React.Component {
 			err: ''
 		}
 	}
+	update(e){
+		let code = e.target.value;
+		try {
+			this.setState({
+				output: window.Babel
+				.transform(code, { presets: ['es2015', 'react']})
+				.code,
+				err: ''
+			})
+		}
+		catch(err){
+
+		}
+	}
 	render(){
 		return(
 			<div>
